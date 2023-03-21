@@ -45,7 +45,54 @@ class Services {
         `${this.url}${this.spaceShipEndpoint}/${id}`,
         fetchOptions
       );
-      await response.json();
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(`Error ${error}`);
+      throw error;
+    }
+  }
+
+  async toShip(id) {
+    try {
+        
+      const fetchOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({}),
+      };
+
+      const response = fetch(
+        `${this.url}${this.apiPassengersToShipEndpoint}/${id}`,
+        fetchOptions
+      );
+      const data = (await response).json();
+      return data;
+    } catch (error) {
+      console.error(`Error ${error}`);
+      throw error;
+    }
+  }
+
+  async toPlanet(id) {
+    try {
+      const fetchOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({}),
+      };
+
+      const response = fetch(
+        `${this.url}${this.apiPassengersToPlanetpEndpoint}/${id}`,
+        fetchOptions
+      );
+
+      const data = (await response).json();
+      return data;
     } catch (error) {
       console.error(`Error ${error}`);
       throw error;

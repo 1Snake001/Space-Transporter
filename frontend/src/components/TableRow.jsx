@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import servicesInstance from "../data-services/dataServices";
 
 const TableRow = ({ isHeader, theadInnerHtml }) => {
-    const [shipData, setShipData] = useState({});
-    const [planetsData, setPlanetsData] = useState([]);
-    const [planetId, setPlanetId] = useState(0);
+  const [planetsData, setPlanetsData] = useState([]);
+  const [shipData, setShipData] = useState({});
+  const [planetId, setPlanetId] = useState(0);
+  const [population, setPopulation] = useState(0);
 
   useEffect(() => {
     const getData = async () => {
@@ -14,14 +15,23 @@ const TableRow = ({ isHeader, theadInnerHtml }) => {
       setShipData(shipData);
     };
     getData();
-  }, [planetId]);
+  }, [planetId, population]);
 
-const moveShipHandler = async (planetId) => {
-const updateShipId = await servicesInstance.moveShip(planetId);
-setPlanetId(planetId);
-};
+  const moveShipHandler = async (planetId) => {
+    await servicesInstance.moveShip(planetId);
+    setPlanetId(planetId);
+  };
 
-console.log(planetId);
+  const moveToShipHandler = async () => {
+    const respData = await servicesInstance.toShip(planetId);
+    setPopulation(respData.planet.population);
+  };
+
+  const moveToPlanetHandler = async () => {
+    const respData = await servicesInstance.toPlanet(planetId);
+    setPopulation(respData.planet.population);
+  };
+
   if (isHeader) {
     return (
       <tr>
@@ -46,15 +56,27 @@ console.log(planetId);
               <td>
                 {shipData.planetId === planet._id ? (
                   <>
-                    <button type="button" className="btn btn-success btn-sm">
+                    <button
+                      type="button"
+                      onClick={() => moveToPlanetHandler()}
+                      className="btn btn-success btn-sm"
+                    >
                       « toPlanet
                     </button>
-                    <button type="button" className="btn btn-success btn-sm">
+                    <button
+                      type="button"
+                      onClick={() => moveToShipHandler()}
+                      className="btn btn-success btn-sm"
+                    >
                       toShip »
                     </button>{" "}
                   </>
                 ) : (
-                  <button type="button" onClick={() => moveShipHandler(planet._id)} className="btn btn-primary btn-sm">
+                  <button
+                    type="button"
+                    onClick={() => moveShipHandler(planet._id)}
+                    className="btn btn-primary btn-sm"
+                  >
                     Move here
                   </button>
                 )}
