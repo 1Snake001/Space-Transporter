@@ -35,7 +35,29 @@ useEffect(()=>{
           <td>{planet.name}</td>
           <td>{planet.population}</td>
           <td>
-  
+          {shipData.planetId === planet._id ? (
+              <>
+                <button
+                  type="button"
+                  className="btn btn-success btn-sm"
+                >
+                  « toPlanet
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-success btn-sm"
+                >
+                  toShip »
+                </button>{" "}
+              </>
+            ) : (
+              <button
+                type="button"
+                className="btn btn-primary btn-sm"
+              >
+                Move here
+              </button>
+            )}
           </td>
           <td>
             {shipData.planetId === planet._id ? shipData.passengers : " - "}
