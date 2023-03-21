@@ -2,6 +2,7 @@ import React from "react";
 import TableRow from "./TableRow";
 
 const Thead = () => {
+    
   const theadInnerHtml = {
     planet: "Planet",
     population: "Population",

@@ -18,11 +18,10 @@ class Services {
           throw error;
         }
       }
-      
+
       async getShip() {
         try {
           const response = await fetch(`${this.url}${this.spaceShipEndpoint}`);
-          console.log(response.status);
           const data = await response.json();
       
           return data;
