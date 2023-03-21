@@ -16,8 +16,7 @@ useEffect(()=>{
        getData();
 },[])
 
-console.log(planetsData);
-console.log(shipData);
+
 
     if (isHeader) {
       return (
@@ -27,12 +26,23 @@ console.log(shipData);
       );
     } else {
       return (
-       <tr>
-          <td>Cell 1</td>
-          <td>Cell 2</td>
-          <td>Cell 3</td>
-          <td>Cell 4</td>
+        <>
+      {planetsData && planetsData.map((planet) => (
+        <tr
+          className={ shipData.planetId === planet._id ? `table table-dark` : ``}
+          key={planet.name}
+        >
+          <td>{planet.name}</td>
+          <td>{planet.population}</td>
+          <td>
+  
+          </td>
+          <td>
+            {shipData.planetId === planet._id ? shipData.passengers : " - "}
+          </td>
         </tr>
+      ))}
+    </>
       );
     }
   };
