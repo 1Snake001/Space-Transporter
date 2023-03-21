@@ -1,9 +1,11 @@
 import './style/App.scss';
+import Table from './components/Table';
 
 function App() {
   return (
-    <div className="title">
-    <h1>Space Transporter</h1>
+    <div className="container">
+    <h1 className="title">Space Transporter</h1>
+    <Table />
     </div>
   );
 }
