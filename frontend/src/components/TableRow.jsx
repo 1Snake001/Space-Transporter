@@ -35,8 +35,8 @@ const TableRow = ({ isHeader, theadInnerHtml }) => {
   if (isHeader) {
     return (
       <tr>
-        {Object.values(theadInnerHtml).map((content) => (
-          <td key={content}>{content}</td>
+        {Object.entries(theadInnerHtml).map((content) => (
+          <td key={content[0]}>{content[1]}</td>
         ))}
       </tr>
     );

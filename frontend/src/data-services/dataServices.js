@@ -55,7 +55,6 @@ class Services {
 
   async toShip(id) {
     try {
-        
       const fetchOptions = {
         method: "POST",
         headers: {
