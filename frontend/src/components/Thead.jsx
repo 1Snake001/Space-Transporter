@@ -1,14 +1,17 @@
 import React from "react";
+import TableRow from "./TableRow";
 
 const Thead = () => {
+  const theadInnerHtml = {
+    planet: "Planet",
+    population: "Population",
+    spaceshipLocation: "Spaceship location",
+    peopleOnShip: "People on ship",
+  };
+
   return (
     <thead>
-      <tr>
-        <th>Planet</th>
-        <th>Population</th>
-        <th>Spaceship location</th>
-        <th>People on ship</th>
-      </tr>
+      <TableRow isHeader={true} theadInnerHtml={theadInnerHtml} />
     </thead>
   );
 };

@@ -4,7 +4,7 @@ import TableRow from './TableRow'
 const Tbody = () => {
   return (
     <tbody>
-        <TableRow/>
+        <TableRow isHeader = {false}/>
     </tbody>
   )
 }
