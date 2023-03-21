@@ -11,8 +11,13 @@ app.use(cors());
 app.use(router);
 app.use(errorHandler);
 
+app.get(`/`, (req, res) => {
+  res.send('Welcome to Space Transporter API!');
+});
+
 app.listen(port, () => {
   console.log(`App is running on http://localhost:${port}`);
 });
+
 
 module.exports = app;
