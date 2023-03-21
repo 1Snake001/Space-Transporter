@@ -7,6 +7,31 @@ class Services {
       this.apiPassengersToPlanetpEndpoint = `/api/passengers/toplanet`;
     }
   
+    async getPlanet() {
+        try {
+          const response = await fetch(`${this.url}${this.planetEndpoint}`);
+          const data = await response.json();
+      
+          return data;
+        } catch (error) {
+          console.error(`Error ${error}`)
+          throw error;
+        }
+      }
+      
+      async getShip() {
+        try {
+          const response = await fetch(`${this.url}${this.spaceShipEndpoint}`);
+          console.log(response.status);
+          const data = await response.json();
+      
+          return data;
+          
+        } catch (error) {
+          console.error(`Error ${error}`)
+          throw error;
+        }
+      }
     
   }
   
