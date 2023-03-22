@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node -r esm src/server.js",
     "dev": "nodemon -r esm src/server.js",
-    "loadData": "node -r esm src/loadData.js"
+    "loadData": "node -r esm src/loadData.js",
+    "build": "webpack --mode production --config webpack.config.js"
   },
   "nodemonConfig": {
     "ignore": ["db/*.json"]
@@ -19,5 +20,9 @@
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "nedb": "^1.8.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.60.0"
   }
 }
+
