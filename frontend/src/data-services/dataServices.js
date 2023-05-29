@@ -1,6 +1,6 @@
 class Services {
   constructor(url, spaceShipEndpoint, planetEndpoint) {
-    this.url = `https://space-transporter-app.herokuapp.com`;
+    this.url = `https://space-transporter.onrender.com`;
     this.planetEndpoint = `/api/planets`;
     this.spaceShipEndpoint = `/api/spaceship`;
     this.apiPassengersToShipEndpoint = `/api/passengers/toship`;
