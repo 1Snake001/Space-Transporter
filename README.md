@@ -1,18 +1,38 @@
 # Space-Transporter
 
-server:
+SERVER
 
-https://space-transporter-app.herokuapp.com
+repo:
+
+https://github.com/1Snake001/space-transporter-api
+
+API link:
+
+https://space-transporter.onrender.com
 
 spaceship endpoint: 
 
-https://space-transporter-app.herokuapp.com/api/spaceship
+https://space-transporter.onrender.com/api/spaceship
 
 planets endpoint:
 
-https://space-transporter-app.herokuapp.com/api/planets
+https://space-transporter.onrender.com/api/planets
 
-client:
+
+
+CLIENT
+
+repos:
+
+REACT
+
+https://github.com/1Snake001/react-space-transporter
+
+JS DOM
+
+https://github.com/1Snake001/space-transporter-js-dom
+
+APP LINK:
 
 https://space-transporter.netlify.app
 
